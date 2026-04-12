@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App - Frontend Mentor</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body>
+    <div class="bg">
+      <img
+        src="./assets/bg-desktop-dark.jpg"
+        alt="Background image for dark theme"
+        class="bg-img bg-img--desktop bg-img--dark"
+      />
+    </div>
     <main>
-      <div class="bg">
-        <img
-          src="./assets/bg-desktop-dark.jpg"
-          alt="Background image for dark theme"
-          class="bg-img bg-img--desktop bg-img--dark"
-        />
-      </div>
 
       <header class="app-header">
         <h1 class="app-title">Todo</h1>
@@ -33,6 +34,10 @@
       </section>
 
       <section class="todo-list tasks-container">
+        <div class="task-container">
+          <input type="radio" id="checkmark-todo-radio" class="todo-checkmark__toggle" />          
+          <label for="checkmark-todo-radio" class="todo-checkmark">Teste tarefa</label>
+        </div>
         <div class="todo-footer">
           <p id="items-left" class="todo-count">X Items Left</p>
           <button class="btn clear-completed">Clear Completed</button>

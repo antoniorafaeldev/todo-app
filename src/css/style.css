@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-500: hsl(220, 98%, 61%);
+  --check-bg-start: hsl(192, 100%, 67%);
+  --check-bg-end: hsl(280, 87%, 65%);
+
+  --light-gray-50: hsl(0, 0%, 98%);
+  --light-purple-300: hsl(234, 39%, 85%);
+  --light-gray-300: hsl(233, 11%, 84%);
+  --light-gray-600: hsl(236, 9%, 61%);
+  --light-navy-850: hsl(235, 19%, 35%);
+
+  --dark-navy-950: hsl(235, 21%, 11%);
+  --dark-navy-900: hsl(235, 24%, 19%);
+  --dark-purple-300: hsl(234, 39%, 85%);
+  --dark-purple-100: hsl(236, 33%, 92%);
+  --dark-purple-600: hsl(235, 16%, 43%);
+  --dark-purple-700: hsl(233, 14%, 35%);
+  --dark-purple-800: hsl(237, 14%, 26%);
+  --dark-gray-600: hsl(236, 9%, 61%);
+
+  --font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background-color: var(--dark-navy-950);
+    font-family: var(--font-family);
+    color: var(--light-gray-50)
+}
+
+.bg-img {
+    width: 100%;
+}
+
+.app-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    color: var(--light-gray-50);
+    text-transform: uppercase;
+}
+
+main {
+  width: min(100%, 31.25rem);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.app-header {
+  display: flex;
+
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.theme-toggle {
+  margin-left: 1rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input[type="text"]{
+  background: none;
+  border: none;
+  width: 100%;
+
+  font-family: var(--font-family);
+  font-size: 1rem;
+  color: var(--dark-purple-100);
+}
+
+.todo-create {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  background-color: var(--dark-navy-900);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
