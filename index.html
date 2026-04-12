@@ -24,7 +24,10 @@
       </header>
 
       <section class="todo-create">
-        <input type="radio" id="add-todo-radio" class="todo-create__toggle" />
+        <label class="todo-checkbox todo-create__checkbox">
+          <input type="checkbox" class="todo-checkbox__input" aria-hidden="true" tabindex="-1" />
+          <span class="todo-checkbox__box" aria-hidden="true"></span>
+        </label>
         <input
           type="text"
           id="todo-input"
@@ -34,10 +37,23 @@
       </section>
 
       <section class="todo-list tasks-container">
+        
         <div class="task-container">
-          <input type="radio" id="checkmark-todo-radio" class="todo-checkmark__toggle" />          
-          <label for="checkmark-todo-radio" class="todo-checkmark">Teste tarefa</label>
+          <label class="todo-checkbox">
+            <input type="checkbox" class="todo-checkbox__input" />
+            <span class="todo-checkbox__box" aria-hidden="true"></span>
+            <span class="todo-checkbox__label">Teste tarefa</span>
+          </label>
         </div>
+
+        <div class="task-container">
+          <label class="todo-checkbox">
+            <input type="checkbox" class="todo-checkbox__input" />
+            <span class="todo-checkbox__box" aria-hidden="true"></span>
+            <span class="todo-checkbox__label">Teste tarefa</span>
+          </label>
+        </div>
+
         <div class="todo-footer">
           <p id="items-left" class="todo-count">X Items Left</p>
           <button class="btn clear-completed">Clear Completed</button>
