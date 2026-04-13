@@ -14,16 +14,31 @@ console.log(todoCreateCheckbox);
 
 
 
+function createTaskFromInput() {
+  const value = todoTextInput.value.trim();
+  if (value === "") return null;
+
+  const taskName = value;
+  const taskId = Date.now().toString();
+  const taskElement = createTask(taskName, taskId);
+
+  tasksContainer.prepend(taskElement);
+  todoTextInput.value = "";
+
+  return taskElement;
+}
+
 todoTextInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter" && todoTextInput.value.trim() !== "") {
-    const taskName = todoTextInput.value.trim();
-    const taskId = Date.now().toString();
-    const taskElement = createTask(taskName, taskId);
-
-    tasksContainer.prepend(taskElement);
-    todoTextInput.value = "";
-    todoCreateCheckbox.checked = false;
-
-    return console.log(taskElement);
+  if (event.key === "Enter") {
+    createTaskFromInput();
   }
-}); 
+});
+
+todoCreateCheckbox.addEventListener("change", () => {
+  if (todoCreateCheckbox.checked) {
+    createTaskFromInput();
+    todoCreateCheckbox.checked = false;
+  }
+});
+
+console.log(todoCreateCheckbox.checked);
