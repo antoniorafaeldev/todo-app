@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,14 +12,15 @@
         src="./assets/bg-desktop-dark.jpg"
         alt="Background image for dark theme"
         class="bg-img bg-img--desktop bg-img--dark"
+        id="bg-img"
       />
     </div>
     <main>
 
       <header class="app-header">
         <h1 class="app-title">Todo</h1>
-        <button class="theme-toggle" aria-label="Toggle theme">
-          <img src="./assets/icon-sun.svg" alt="Sun icon" />
+        <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+          <img src="./assets/icon-sun.svg" alt="Sun icon" id="theme-icon" />
         </button>
       </header>
 
@@ -83,5 +84,8 @@
         </nav>
       </section>
     </main>
+
+
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
