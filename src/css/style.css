@@ -43,6 +43,12 @@ body {
   color: var(--light-gray-50);
 }
 
+.light body {
+  background-color: var(--light-gray-300);
+  color: var(--light-navy-850);
+}
+
+
 .bg-img {
   width: 100%;
   height: var(--hero-height);
@@ -92,8 +98,19 @@ button {
 .todo-create {
   display: flex;
   align-items: center;
-  gap: var(--checkbox-gap);
   width: 100%;
+
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+
+  background-color: var(--dark-navy-900);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.light .todo-create, .light .tasks-container {
+  background-color: var(--light-gray-50);
 }
 
 .todo-create__input {
@@ -114,6 +131,12 @@ button {
   font-family: var(--font-family);
   font-size: 1rem;
   color: var(--dark-purple-100);
+
+  outline: none;
+}
+
+.light .todo-create__input {
+  color: var(--dark-purple-700);
 }
 
 .todo-checkbox {
@@ -148,6 +171,11 @@ button {
     background 0.18s ease,
     box-shadow 0.18s ease,
     transform 0.12s ease;
+}
+
+.light .todo-checkbox__box {
+  background: var(--light-gray-50);
+  border: 2px solid rgba(0, 0, 0, 0.06);
 }
 
 .todo-checkbox__box::after {
@@ -191,16 +219,8 @@ button {
   user-select: none;
 }
 
-.todo-create {
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-
-  background-color: var(--dark-navy-900);
-  border-radius: 0.5rem;
-  margin: 1rem 0;
+.light .todo-checkbox__label {
+  color: var(--dark-purple-700);
 }
 
 .tasks-container {
@@ -214,6 +234,10 @@ button {
   border-bottom: 1px solid var(--dark-purple-600);
   padding: 0.5rem;
   margin: 0.5rem 0;
+}
+
+.light .task-container {
+  border-bottom: 1px solid var(--light-purple-300);
 }
 
 .todo-checkbox {
@@ -237,6 +261,11 @@ button {
 .filters {
   background-color: var(--dark-navy-900);
   padding: 1rem;
+  
+}
+
+.light .filters {
+  background-color: var(--light-gray-50);
 }
 
 ul.filters__list {
@@ -244,6 +273,10 @@ ul.filters__list {
   list-style: none;
   justify-content: center;
   gap: 1rem;
+}
+
+.filters__btn {
+  font-weight: 700;
 }
 
 .clear-completed:hover {
@@ -254,6 +287,10 @@ ul.filters__list {
   color: var(--dark-purple-100);
 }
 
+.light .clear-completed:hover,
+.light .filters__btn:hover {
+  color: var(--light-navy-850-700);
+}
 
 .filters__btn--active,
 .filters__btn--active:hover {
