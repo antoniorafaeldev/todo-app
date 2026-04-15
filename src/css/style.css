@@ -236,6 +236,11 @@ button {
   margin: 0.5rem 0;
 }
 
+.completed .todo-checkbox__label {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
 .light .task-container {
   border-bottom: 1px solid var(--light-purple-300);
 }

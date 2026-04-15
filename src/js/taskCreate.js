@@ -77,7 +77,7 @@ function createCheckboxBox() {
 function createCheckboxInput(task) {
   const checkboxInput = document.createElement("input");
   checkboxInput.type = "checkbox";
-  checkboxInput.classList.add("todo-checkbox__input");
+  checkboxInput.classList.add("todo-checkbox__input", "todo-checkbox-markoff");
   checkboxInput.addEventListener("change", () => {
     task.toggleCompleted();
   });

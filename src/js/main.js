@@ -1,5 +1,9 @@
 import { toggleTheme } from "./theme.js";
 import { createTask } from "./taskCreate.js";
+import { markOffTask } from "./markOff.js";
+
+const todoTaks = []
+const completedTasks = []
 
 const themeToggleBtn = document.getElementById("theme-toggle");
 
@@ -9,10 +13,12 @@ const tasksContainer = document.getElementById("tasks-container");
 const todoTextInput = document.getElementById("todo-input");
 const todoCreateCheckbox = document.getElementById("todo-create-input");
 
-console.log(todoTextInput);
-console.log(todoCreateCheckbox);
 
-
+tasksContainer.addEventListener("change", (event) => {
+  if (event.target.matches(".todo-checkbox-markoff")) {
+    markOffTask(event.target.closest(".task-container"));
+  }
+});
 
 function createTaskFromInput() {
   const value = todoTextInput.value.trim();
@@ -41,4 +47,4 @@ todoCreateCheckbox.addEventListener("change", () => {
   }
 });
 
-console.log(todoCreateCheckbox.checked);
+
