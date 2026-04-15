@@ -236,6 +236,10 @@ button {
   margin: 0.5rem 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .completed .todo-checkbox__label {
   text-decoration: line-through;
   opacity: 0.6;
