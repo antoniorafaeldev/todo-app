@@ -1,10 +1,13 @@
 import { toggleTheme } from "./theme.js";
 import { createTask } from "./taskCreate.js";
 import { markOffTask } from "./markOff.js";
+import { clearCompletedTasks } from "./clearTasks.js";
 
 let todoTasks = 0;
 let completedTasks = 0;
 const itemsLeftCount = document.getElementById("items-left-count");
+
+const clearCompletedBtn = document.getElementById("clear-completed-btn");
 
 const themeToggleBtn = document.getElementById("theme-toggle");
 
@@ -60,4 +63,9 @@ todoCreateCheckbox.addEventListener("change", () => {
   }
 });
 
-
+clearCompletedBtn.addEventListener("click", () => {
+  clearCompletedTasks();
+  completedTasks = 0;
+  todoTasks = document.querySelectorAll(".task-container").length - completedTasks;
+  itemsLeftCount.textContent = todoTasks;
+});

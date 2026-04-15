@@ -1,28 +1,3 @@
-/* 
-Feat: Criação de Tarefas:
-
-Passos: No arquivo taskCreate.js, irei criar a função que irá adicionar as task. Ela receberá como parâmetro o valor do input do todo-create__input
-
-Criar uma div que contenha como no exemplo:
-
-        <div class="task-container">
-          <label class="todo-checkbox">
-            <input type="checkbox" class="todo-checkbox__input" />
-            <span class="todo-checkbox__box" aria-hidden="true"></span>
-            <span class="todo-checkbox__label">Teste tarefa</span>
-          </label>
-        </div>
-
-Retratar as tarefas como objetos:
-
-Uma classe tarefa com propriedades:
-- Nome
-- Está Concluída
-e métodos
-- Marcar como concluída
-- Deletar
-
-*/
 
 export class Task {
   constructor(name, id, completed = false) {
