@@ -42,7 +42,7 @@ function createTaskFromInput() {
 }
 
 todoTextInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
+  if (event.key === "Enter" && todoTextInput.value.trim() !== "" ) {
     createTaskFromInput();
     todoTasks++;
     itemsLeftCount.textContent = todoTasks;
