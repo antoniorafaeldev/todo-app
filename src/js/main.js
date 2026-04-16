@@ -39,6 +39,25 @@ tasksContainer.addEventListener("change", (event) => {
   }
 });
 
+tasksContainer.addEventListener("keydown", (event) => {
+  if (event.target.matches(".todo-checkbox-markoff") && event.key === "Enter") {
+    markOffTask(event.target.closest(".task-container"));
+
+    if (event.target.checked === false) {
+      event.target.checked = true;
+      completedTasks++ 
+    } else {
+      event.target.checked = false;
+      completedTasks--;
+    }
+
+    todoTasks = document.querySelectorAll(".task-container").length - completedTasks;
+    itemsLeftCount.textContent = todoTasks;
+    console.log("aa")
+  };
+});
+
+
 function createTaskFromInput() {
   const value = todoTextInput.value.trim();
   if (value === "") return null;
