@@ -2,9 +2,8 @@ import { toggleTheme } from "./theme.js";
 import { createTask } from "./taskCreate.js";
 import { markOffTask } from "./markOff.js";
 import { clearCompletedTasks } from "./clearTasks.js";
-import { showAllTasks } from "./showTasks.js";
-import { showActiveTasks } from "./showTasks.js";
-import { showCompletedTasks } from "./showTasks.js";
+import { showAllTasks, showActiveTasks, showCompletedTasks, verifyActiveFilter } from "./showTasks.js";
+
 
 let todoTasks = 0;
 let completedTasks = 0;
@@ -24,6 +23,8 @@ const tasksContainer = document.getElementById("tasks-container");
 const todoTextInput = document.getElementById("todo-input");
 const todoCreateCheckbox = document.getElementById("todo-create-input");
 
+let activeFilter = "all";
+
 tasksContainer.addEventListener("change", (event) => {
   if (event.target.matches(".todo-checkbox-markoff")) {
     markOffTask(event.target.closest(".task-container"));
@@ -33,6 +34,9 @@ tasksContainer.addEventListener("change", (event) => {
     todoTasks =
       document.querySelectorAll(".task-container").length - completedTasks;
     itemsLeftCount.textContent = todoTasks;
+
+
+    verifyActiveFilter(activeFilter);
     console.log(
       `Tarefas concluídas: ${completedTasks} / ${document.querySelectorAll(".task-container").length}. Tarefas pendentes: ${todoTasks}`,
     );
@@ -53,6 +57,8 @@ tasksContainer.addEventListener("keydown", (event) => {
 
     todoTasks = document.querySelectorAll(".task-container").length - completedTasks;
     itemsLeftCount.textContent = todoTasks;
+
+    verifyActiveFilter(activeFilter);
     console.log("aa")
   };
 });
@@ -77,6 +83,10 @@ todoTextInput.addEventListener("keypress", (event) => {
     createTaskFromInput();
     todoTasks++;
     itemsLeftCount.textContent = todoTasks;
+
+    verifyActiveFilter(activeFilter);
+
+
     console.log(`Tarefas criadas: ${todoTasks}`);
   }
 });
@@ -87,6 +97,10 @@ todoCreateCheckbox.addEventListener("change", () => {
     todoCreateCheckbox.checked = false;
     todoTasks++;
     itemsLeftCount.textContent = todoTasks;
+
+    verifyActiveFilter(activeFilter);
+
+
     console.log(`Tarefas criadas: ${todoTasks}`);
   }
 });
@@ -101,6 +115,7 @@ clearCompletedBtn.addEventListener("click", () => {
 
 showAllBtn.addEventListener("click", () => {
   showAllTasks();
+  activeFilter = "all";
   showAllBtn.classList.add("filters__btn--active");
   showActiveBtn.classList.remove("filters__btn--active");
   showCompletedBtn.classList.remove("filters__btn--active");
@@ -108,6 +123,7 @@ showAllBtn.addEventListener("click", () => {
 
 showActiveBtn.addEventListener("click", () => {
   showActiveTasks();
+  activeFilter = "active";
   showActiveBtn.classList.add("filters__btn--active");
   showAllBtn.classList.remove("filters__btn--active");
   showCompletedBtn.classList.remove("filters__btn--active");
@@ -115,6 +131,7 @@ showActiveBtn.addEventListener("click", () => {
 
 showCompletedBtn.addEventListener("click", () => {
   showCompletedTasks();
+  activeFilter = "completed";
   showCompletedBtn.classList.add("filters__btn--active");
   showAllBtn.classList.remove("filters__btn--active");
   showActiveBtn.classList.remove("filters__btn--active");

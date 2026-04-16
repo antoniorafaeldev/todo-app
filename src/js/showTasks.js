@@ -42,3 +42,13 @@ export function showCompletedTasks() {
 
     });
 }
+
+export function verifyActiveFilter(activeFilter) {
+    if (activeFilter === "active") {
+          showActiveTasks();
+    } else if (activeFilter === "completed") {
+          showCompletedTasks();
+    } else {
+          showAllTasks();
+    }
+}
