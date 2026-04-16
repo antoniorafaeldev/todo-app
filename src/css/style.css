@@ -219,6 +219,15 @@ button {
   user-select: none;
 }
 
+/* Permitir que o texto do label quebre corretamente dentro do flex container */
+.todo-checkbox__label {
+  flex: 1 1 auto;
+  min-width: 0; /* necessário para permitir encolhimento dentro de flex */
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .light .todo-checkbox__label {
   color: var(--dark-purple-700);
 }
