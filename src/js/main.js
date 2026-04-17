@@ -37,9 +37,7 @@ tasksContainer.addEventListener("change", (event) => {
 
 
     verifyActiveFilter(activeFilter);
-    console.log(
-      `Tarefas concluídas: ${completedTasks} / ${document.querySelectorAll(".task-container").length}. Tarefas pendentes: ${todoTasks}`,
-    );
+  
   }
 });
 
@@ -59,7 +57,7 @@ tasksContainer.addEventListener("keydown", (event) => {
     itemsLeftCount.textContent = todoTasks;
 
     verifyActiveFilter(activeFilter);
-    console.log("aa")
+
   };
 });
 
@@ -86,8 +84,6 @@ todoTextInput.addEventListener("keypress", (event) => {
 
     verifyActiveFilter(activeFilter);
 
-
-    console.log(`Tarefas criadas: ${todoTasks}`);
   }
 });
 
@@ -100,8 +96,6 @@ todoCreateCheckbox.addEventListener("change", () => {
 
     verifyActiveFilter(activeFilter);
 
-
-    console.log(`Tarefas criadas: ${todoTasks}`);
   }
 });
 
