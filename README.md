@@ -15,7 +15,7 @@ Este projeto é um gerenciador de tarefas, onde você pode:
 - Filtrar tarefas concluídas/pendentes
 - Alternar entre modo claro e escuro
 
-## Acesse o Todo App [clicando aqui](https://antoniorafaeldev.github.io/faq-accordion/)
+## Acesse o Todo App [clicando aqui](https://antoniorafaeldev.github.io/todo-app/)
 
 
 ## 🚀 Tecnologias
